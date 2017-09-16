@@ -6,7 +6,7 @@ from tensorflow.contrib.rnn import RNNCell
 
 class SRUCell(RNNCell):
     def __init__(self, num_units, activation=tf.nn.tanh, state_is_tuple=False, reuse=None):
-       # super(SRUCell, self).__init__(_reuse=reuse)
+        super(SRUCell, self).__init__(_reuse=reuse)
         self.hidden_dim = num_units
         self.state_is_tuple = state_is_tuple
         self.g = activation
