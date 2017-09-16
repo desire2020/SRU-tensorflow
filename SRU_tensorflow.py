@@ -32,7 +32,7 @@ class SRUCell(RNNCell):
     def __call__(self, inputs, state, scope=None):
         with vs.variable_scope(scope or type(self).__name__):
             if self.state_is_tuple:
-                (c_prev, _) = state
+                (c_prev, h_prev) = state
             else:
                 c_prev = state
             # Forget Gate
