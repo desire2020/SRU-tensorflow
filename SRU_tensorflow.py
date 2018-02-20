@@ -24,7 +24,7 @@ class SRUCell(RNNCell):
     @property
     def state_size(self):
         return (LSTMStateTuple(self.hidden_dim, self.hidden_dim)
-                if self.state_is_tuple else 2 * self.hidden_dim)
+                if self.state_is_tuple else self.hidden_dim)
 
     @property
     def output_size(self):
